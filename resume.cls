@@ -18,7 +18,6 @@
     hyperref,
   }
 
-% \setmainfont { Source~ Serif~ Pro }
 \setmainfont { Crimson }
 \setsansfont { FiraSans~ Light }
 \newfontfamily \__resume_font_title: { FiraSans }
@@ -34,7 +33,6 @@
     hmargin = 1.5 cm,
     top     = 2.4 cm,
     bottom  = 1.2 cm,
-    % showframe
   }
 
 \setlist
