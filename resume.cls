@@ -1,6 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\RequirePackage{expl3}
-\ProvidesExplClass{resume}{2019-09-05}{v0.1}{Resume class for Xiangdong Zeng}
+\ProvidesExplClass{resume}{2022-05-16}{v0.2}{Resume class for Xiangdong Zeng}
 
 \LoadClass { article }
 \RequirePackage
@@ -19,11 +18,24 @@
   }
 
 \setmainfont { Crimson }
-\setsansfont { FiraSans~ Light }
-\newfontfamily \__resume_font_title: { FiraSans }
   [
-    UprightFont = *~ ExtraLight,
-    BoldFont    = *~ Semibold,
+    Extension      = .otf,
+    UprightFont    = *-Roman,
+    ItalicFont     = *-Italic,
+    BoldFont       = *-Bold,
+    BoldItalicFont = *-BoldItalic,
+  ]
+\setsansfont { SourceSansPro }
+  [
+    Extension   = .otf,
+    UprightFont = *-Light,
+    ItalicFont  = *-LightIt,
+  ]
+\newfontfamily \__resume_font_title: { SourceSansPro }
+  [
+    Extension   = .otf,
+    UprightFont = *-ExtraLight,
+    BoldFont    = *-Semibold,
     LetterSpace = 12,
   ]
 
@@ -52,8 +64,8 @@
 \cs_new_protected:Npn \resume_font_size:n #1
   { \resume_font_size:nn {#1} { \fp_eval:n { #1*1.2 } } }
 
-\cs_set:Npn \resume_gray_color:  { \color [HTML] {757575} }
-\cs_set:Npn \resume_theme_color: { \color [HTML] {009688} }
+\cs_set:Npn \resume_gray_color:  { \color [HTML] {a3a3a3} }
+\cs_set:Npn \resume_theme_color: { \color [HTML] {3b82f6} }
 
 \DeclareDocumentCommand \maketitle { }
   {
@@ -75,11 +87,10 @@
         \resume_gray_color:
         \clist_set:Nn \l_tmpa_clist
           {
-            \__resume_icon_text:nn     { \faMobile*           }
-              { \str_use:N \g__resume_phone_str },
             \__resume_icon_text_url:nn { \faEnvelope[regular] } { mail    },
             \__resume_icon_text_url:nn { \faGithub            } { github  },
             \__resume_icon_text_url:nn { \faTwitter           } { twitter },
+            \__resume_icon_text_url:nn { \faGlobe             } { website },
           }
         \clist_use:Nn \l_tmpa_clist { \quad \textbullet \quad }
         \par
@@ -92,7 +103,7 @@
 
     % PDF metadata
     \group_begin:
-      \str_set:Nx \l_tmpa_str {  \g__resume_name_a_str\ \g__resume_name_b_str }
+      \str_set:Nx \l_tmpa_str { \g__resume_name_a_str \c_space_tl \g__resume_name_b_str }
       \hypersetup
         {
           pdfauthor = { \l_tmpa_str },
@@ -103,7 +114,7 @@
 
 \cs_new_protected:Npn \__resume_icon_text:nn #1#2
   {
-    \scalebox {0.75} {#1}
+    \scalebox {0.8} {#1}
     \hspace {0.3em}
     #2
   }
@@ -125,10 +136,6 @@
   }
 \str_new:N \g__resume_name_a_str
 \str_new:N \g__resume_name_b_str
-
-\NewDocumentCommand \phone { m }
-  { \str_gset:Nn \g__resume_phone_str {#1} }
-\str_new:N \g__resume_phone_str
 
 \cs_new_protected:Npn \__resume_def_url_aux:nn #1#2
   {
@@ -161,6 +168,7 @@
 \__resume_def_url_aux:nn { mail    } { mailto:              }
 \__resume_def_url_aux:nn { github  } { https://github.com/  }
 \__resume_def_url_aux:nn { twitter } { https://twitter.com/ }
+\__resume_def_url_aux:nn { website } { https://             }
 
 \NewDocumentEnvironment { leftpanel } { +b }
   { \tl_gset:Nn \g__resume_left_panel_tl {#1} } { }
@@ -173,14 +181,14 @@
   {
     \dim_set:Nn \l__resume_left_panel_wd_dim
       { #1 \textwidth - #2 / 2 }
-    \dim_set:Nn \l__resume_rightt_panel_wd_dim
+    \dim_set:Nn \l__resume_right_panel_wd_dim
       { \fp_eval:n { 1 - #1 } \textwidth - #2 / 2 }
     \noindent
     \begin{tabular}
         {
           @ { } p { \dim_use:N \l__resume_left_panel_wd_dim }
           @ { \hspace {#2} }
-          p { \dim_use:N \l__resume_rightt_panel_wd_dim } @{ }
+          p { \dim_use:N \l__resume_right_panel_wd_dim } @{ }
         }
       \RaggedRight \g__resume_left_panel_tl &
       \raggedright \g__resume_right_panel_tl
@@ -196,7 +204,7 @@
     \group_end:
   }
 \dim_new:N \l__resume_left_panel_wd_dim
-\dim_new:N \l__resume_rightt_panel_wd_dim
+\dim_new:N \l__resume_right_panel_wd_dim
 
 \DeclareDocumentCommand \section { m }
   {
@@ -211,31 +219,24 @@
     \par
   }
 
-\NewDocumentEnvironment { entry } { m m m }
+\NewDocumentEnvironment { entry } { o o m }
   {
-    \group_begin:
-      \resume_gray_color:
-      \resume_font_size:n { 8 }
-      \sffamily
-      #2 \hfill #3
-    \group_end:
-    \par
+    \IfValueT {#1}
+      {
+        \group_begin:
+          \resume_gray_color:
+          \resume_font_size:n { 8 }
+          \sffamily
+          \IfValueTF {#2}
+            { #1 \hfill #2 }
+            { #1 }
+        \group_end:
+        \par
+      }
     \group_begin:
       \resume_font_size:n { 10 }
       \bfseries
-      #1
-    \group_end:
-    \par
-    \itemize
-  }
-  { \enditemize \vspace {1ex} }
-
-\NewDocumentEnvironment { entry* } { m }
-  {
-    \group_begin:
-      \resume_font_size:n { 10 }
-      \bfseries
-      #1
+      #3
     \group_end:
     \par
     \itemize
@@ -257,7 +258,10 @@
 \DeclareDocumentCommand \ApTeX  { } { Ap \kern -.05em \TeX }
 \DeclareDocumentCommand \CTeX   { } { C \TeX }
 
-\cs_set:Npn \slash
+\DeclareDocumentCommand \slash { }
   { \hspace{0.1em} / \hspace{0.1em} }
+
+\DeclareDocumentCommand \icontext { m m }
+  { \__resume_icon_text:nn {#1} {#2} }
 
 \endinput
