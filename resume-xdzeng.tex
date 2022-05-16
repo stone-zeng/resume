@@ -1,78 +1,86 @@
 \documentclass{resume}
 
 \name{Xiangdong}{Zeng}
-\phone{(+86) 159-****-0740}
 \mail{xdzeng96@gmail.com}
 \github{stone-zeng}
 \twitter{xiangdong_zeng}
+\website{stone-zeng.github.io}
 
 \begin{leftpanel}
 
+\section{Experience}
+
+\begin{entry}
+    [Apr 2021 -- Present]
+    [Shanghai, China]
+    {\href{https://atelier-anchor.com}{atelierAnchor}, Technician}
+  \item Assist develop and testing for typefaces, including \emph{Dinkie Bitmap},
+    \emph{Dinkie Icons}, \emph{Jinhua Mincho}, etc.
+  \item Develop the official website and other type related websites
+  \item Participate in the editing of \emph{dash}, an irregularly-published zine about
+    type, typography, design and visual culture
+\end{entry}
+
+\begin{entry}
+    [Dec 2019 -- Oct 2021]
+    [Shanghai, China]
+    {\href{https://3type.cn}{3type}, Font engineering intern}
+  \item Assist develop and testing for typefaces, including \emph{RVS Basic},
+    \emph{Kuusi Sans}, etc.
+  \item Develop Glyphs plugins, including \emph{CJK Metrics}, \emph{Blackness},
+    \emph{Guides Palette}, etc.
+  \item Explore workflow in Chinese font development
+  \item Work as teaching assistant at TypeSchool, involving translation, software instructions
+    and teaching Python
+\end{entry}
+
 \section{Education}
 
-\begin{entry}{Fudan University}{Sep 2018 -- Present}{Shanghai, China}
-  \item Ph.D.\ candidate in theoretical physics
-  \item Xianghui Scholarship, 2018
+\begin{entry}
+    [Sep 2018 -- Jun 2023 (expected)]
+    [Shanghai, China]
+    {Fudan University}
+  \item PhD candidate in theoretical physics (supervisor: Prof.\ Ling-Yan Hung)
+  \item Research interest: use tensor networks to study Virasoro symmetries in CFT
+    and categorical symmetries in topological orders
 \end{entry}
 
-\begin{entry}{Fudan University}{Sep 2014 -- Jun 2018}{Shanghai, China}
-  \item B.Sc.\ in physics
+\begin{entry}
+    [Sep 2014 -- Jun 2018]
+    [Shanghai, China]
+    {Fudan University}
+  \item BSc in physics
   \item Honor Student Scholarship in Natural Science, 2016 \& 2018
-  \item Undergraduate Professional Scholarship, 2016
-\end{entry}
-
-\begin{entry}{Ume\aa{} University}{Aug 2016 -- Jan 2017}{Ume\aa{}, Sweden}
-  \item Exchange student in Department of Physics
 \end{entry}
 
 \section{Projects}
 
 \begin{entry}
+    [Feb 2017 -- Present]
+    [\icontext{\faGithub}{\href{https://github.com/stone-zeng/fduthesis}{stone-zeng/fduthesis}}]
     {fduthesis, \LaTeX{} thesis template for Fudan University}
-    {Feb 2017 -- Present}
-    {\href{https://www.ctan.org/pkg/fduthesis}{CTAN: fduthesis}}
-  \item Support doctoral, master dissertation and undergraduate thesis, both in Chinese or English
-  \item Provide a simple interface, a normative format, as well as a hackable document class
-  \item Support \XeTeX{} and \LuaTeX{} engine at present; support for \pdfTeX{} and \ApTeX{} is
-    under development
-  \item Purely written in \LaTeX3
+  \item Support doctoral, master dissertation and undergraduate thesis, both in Chinese and English
+  \item Provide a simple interface and a hackable document class
+  \item Support \XeTeX{} and \LuaTeX{} engines; purely written in \LaTeX3
 \end{entry}
 
 \begin{entry}
-    {zhlipsum, Chinese dummy text}
-    {Apr 2017 -- Present}
-    {\href{https://www.ctan.org/pkg/zhlipsum}{CTAN: zhlipsum}}
-  \item Provide an interface to print dummy text in Chinese language
-  \item Support UTF-8, GBK, Big5 encodings, and all the mainstream \TeX{} engines
-\end{entry}
-
-\begin{entry}
+    [Jan 2018 -- Present]
+    [\icontext{\faGithub}{\href{https://github.com/firamath/firamath}{firamath/firamath}}]
     {firamath, Sans-serif font with Unicode math support}
-    {Jan 2018 -- Present}
-    {\href{https://www.ctan.org/pkg/firamath}{CTAN: firamath}}
   \item A fork of Fira Sans and FiraGO
   \item Support OpenType MATH table and can be used in \XeTeX{}, \LuaTeX{}, Firefox,
     Microsoft Word, etc.
-  \item Support numerous mathematical symbols
-  \item Have 12 weights, from Thin to Ultra
-\end{entry}
-
-\section{Activities}
-
-\begin{entry}
-    {Workshop: TypeSchool 2019 --- from Digit to Digital}
-    {Aug 2019}
-    {3type, Shanghai}
-  \item Design a modern serif typeface Aluminium, under the direction of type designer Joe Chang
-    and Rainer Erich Scheichelbauer
+  \item 1500+ mathematical symbols, 12 weights
+  \item Explore the workflow of developing a math font in Glyphs
 \end{entry}
 
 \begin{entry}
-    {Talk: Modern \LaTeX{} in a Nutshell}
-    {Apr 2019}
-    {Fudan University}
-  \item Introduce basic knowledge of typesetting and usage of \LaTeX{} to undergraduate and
-    graduate students
+    [Jan 2018 -- Jan 2022]
+    [\icontext{\faGithub}{\href{https://github.com/stone-zeng/aluminium}{stone-zeng/aluminium}}]
+    {Aluminium typeface}
+  \item A modern serif font with narrow width and high contrast
+  \item Final project at 3type's TypeSchool 2019
 \end{entry}
 
 \end{leftpanel}
@@ -81,72 +89,51 @@
 
 \section{Skills}
 
-\begin{entry*}{\LaTeX{} related}
-  \item Typesetting \& layout design
-  \item Package development (including \LaTeX3)
-  \item Type design \& font technology
-\end{entry*}
+\begin{entry}{Type design \& font engineering}
+  \item Glyphs, FontForge, fonttools, etc.
+  \item Latin and CJK type design
+  \item Typography and layout design
+  \item OpenType\slash TrueType
+\end{entry}
 
-\begin{entry*}{Programming}
-  \item C\slash C++, Python, Mathematica, MATLAB, etc.
-  \item HTML\slash CSS\slash JavaScript
+\begin{entry}{Programming}
+  \item C\slash C++, Python, Rust, Haskell, Mathematica, etc.
+  \item HTML, CSS, JavaScript, Vue.js
+  \item \LaTeX{} package development
   \item Git, Bash, etc.
-\end{entry*}
+\end{entry}
 
-\begin{entry*}{Languages}
+\begin{entry}{Languages}
   \item Native: Mandarin Chinese
-  \item Fluent: English (TOEFL iBT 97)
-  \item Basic: Swedish \& Japanese
-\end{entry*}
+  \item Fluent: English
+  \item Basic: Japanese
+\end{entry}
 
 \section{Community contributions}
 
 \begin{entry}
-    {\CTeX-org}
-    {Dec 2018 -- Present}
-    {\href{https://github.com/CTeX-org}{github.com/CTeX-org}}
-  \item Develop \& test \CTeX{} related packages
-  \item Translate documentations
-  \item Answer questions in the forum
+    [Dec 2018 -- Present]
+    {\href{https://github.com/CTeX-org}{\CTeX-org}}
+  \item Develop and maintain packages, including \emph{\CTeX}, \emph{xeCJK}, \emph{zhlipsum}, etc.
+  \item Maintain the Chinese translation of \emph{lshort} and \emph{learnlatex.github.io}
+  \item Help solving problems in the forum
 \end{entry}
 
-\begin{entry}
-    {\LaTeX{} studio}
-    {Jul 2018 -- Present}
-    {\href{https://www.latexstudio.net}{latexstudio.net}}
-  \item Help solving problems for \LaTeX{} novice users
-  \item Maintain a list of frequently asked questions
-  \item Make introductory videos
+\section{Talks}
+
+\begin{entry}[Oct 2020]{Chinese “All Over” Chinese}
+  \item ATypI 2020 All Over
 \end{entry}
 
-\begin{entry*}{Participating projects}
-  \item thuthesis, sjtuthesis, ustcthesis
+\begin{entry}[Mar 2020]{Modern \LaTeX{} in a Nutshell}
+  \item \LaTeX{} studio (online)
+  \item Video: \href{https://www.bilibili.com/video/BV1RE411W7FS}{bilibili/BV1RE411W7FS}
+\end{entry}
 
-    \begin{itemize}
-      \item Help develop the thesis templates
-      \item Resolve issues
-    \end{itemize}
-
-  \item Garamond-Math
-
-    \begin{itemize}
-      \item Design enclosed number glyphs
-      \item Review spacing \& kerning
-    \end{itemize}
-
-  \item \LaTeX3, unicode-math
-
-    \begin{itemize}
-      \item Add minor features
-      \item Edit documentations
-    \end{itemize}
-
-  \item \LaTeX-workshop
-
-    \begin{itemize}
-      \item Help test the syntax highlight for \LaTeX-expl3 \& Doc\TeX{}
-    \end{itemize}
-\end{entry*}
+\begin{entry}[Apr 2020]{Mathematica in a Nutshell}
+  \item Fudan University (online)
+  \item Video: \href{https://www.bilibili.com/video/BV1z64y1T7Nb}{bilibili/BV1z64y1T7Nb}
+\end{entry}
 
 \end{rightpanel}
 
