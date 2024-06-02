@@ -1,7 +1,6 @@
 # My Resume
 
-The style is inspired by [~~be5invis/Resume~~](https://github.com/be5invis/Resume).
+- [中文版](resume-xdzeng-zh.pdf)
+- [English version](resume-xdzeng-en.pdf)
 
-You may use XeLaTeX or LuaLaTeX to compile it.
-
-The code is licensed under the [MIT License](./LICENSE).
+The code is licensed under the [MIT License](LICENSE).

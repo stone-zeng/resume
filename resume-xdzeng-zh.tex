@@ -1,0 +1,94 @@
+\documentclass{resume-zh}
+
+\usepackage{fontawesome5}
+
+\newcommand{\icon}[1]{{\footnotesize#1}\,}
+\newcommand{\range}[2]{#1\,\raisebox{0.05em}{--}\,#2}
+
+\hypersetup{colorlinks, urlcolor=headings}
+
+\begin{document}
+
+\namesection{曾\,祥\,东}{
+  \icon{\faEnvelope[regular]} \href{mailto:xdzeng96@gmail.com}{xdzeng96@gmail.com}
+  \quad\textbullet\quad
+  \icon{\faMobile*} +86 15921560740
+  \quad\textbullet\quad
+  \icon{\faGithub} \href{https://github.com/stone-zeng}{stone-zeng}
+  \quad\textbullet\quad
+  \icon{\faGlobe} \href{https://stone-zeng.site}{stone-zeng.site}
+}
+
+\section{教育经历}
+
+\subsection{复旦大学，理论物理博士}[GPA: 3.45/4 \hfill \location{\range{2018.09}{2024.01}}]
+
+\begin{itemize}
+  \item 导师：孔令欣，研究方向：拓扑序与张量网络
+  \item 修读课程：量子场论、共形场论、广义相对论、高等电动力学、天体物理、Haskell 编程等
+  \item 奖学金：2018 年复旦大学相辉奖学金
+\end{itemize}
+
+\subsection{复旦大学，物理学本科}[GPA: 3.57/4 \hfill \location{\range{2014.09}{2018.06}}]
+
+\begin{itemize}
+  \item 修读课程：量子力学、统计物理、电动力学、固体物理、量子计算与量子信息、微分几何、群论等
+  \item 奖学金：2018 年物理学系“基础学科拔尖学生培养试验计划”荣誉学生
+\end{itemize}
+
+\section{实习经历}
+
+\subsection{锚坞 (atelierAnchor)}[实习工程师 \hfill \location{\range{2021.04}{2024.01}}]
+
+\begin{itemize}
+  \item 主要工作：网站开发、字体封装与测试、杂志编辑与审校等
+\end{itemize}
+
+\section{科研项目}
+
+\subsection{奇异关联子与全息张量网络的构造}[\hfill \location{\range{2020.06}{2023.12}}]
+
+\begin{itemize}
+  \item 二维临界格点模型的配分函数可由拓扑序的基态波函数和对应的边界直积态做内积（即奇异关联子）得到。据此，利用拓扑序基态波函数的不动点性质，可以通过不断对边界直积态应用张量范畴学中的 \emph{F} 移动等操作来实现重整化算符的构造
+  \item 重整化算符也给出了全息张量网络的构造，在其中插入算符之后可计算相应的体—边传播子，并可检查其与 AdS/CFT 给出的理论结果是否一致
+  \item 在全息张量网络中还可以实现算符推移，并且给出边界算符为广义自由场的条件
+  \item 发表论文：Zeng \emph{et al.} \href{https://doi.org/10.3390/e25111543}{Entropy \textbf{2023}, 25(11), 1543};\enspace
+                  Chen \emph{et al.} \href{https://arxiv.org/abs/2210.12127}{arXiv:2210.12127}
+\end{itemize}
+
+\subsection{二维配分函数中 Virasoro 与 Kac--Moody 代数的张量网络表示}[\hfill \location{\range{2022.01}{2023.05}}]
+
+\begin{itemize}
+  \item 给出了在格点模型中构建 Virasoro 与 Kac--Moody 代数对应的张量网络的一般性方法，即使在 Hamiltonian 无法直接获得的情况下仍可以通过配分函数进行计算
+  \item 通过数值模拟，该方案在二维 Ising 模型和 dimer 模型以及 Fibonacci 任意子等体系中均得到了验证
+  \item 发表论文：Zeng \emph{et al.} \href{https://doi.org/10.1103/PhysRevB.107.245146}{Phys.\ Rev.\ B \textbf{107}, 245146 (2022)};\enspace
+                  Wang \emph{et al.} \href{https://doi.org/10.1103/PhysRevB.106.115116}{Phys.\ Rev.\ B \textbf{106}, 115116 (2022)}
+\end{itemize}
+
+\subsection{机器学习与 Ising 模型}[\hfill \location{\range{2018.01}{2018.06}}]
+
+\begin{itemize}
+  \item 利用线性分类模型以及由多个线性层组合而成的神经网络等有监督学习方式对 Ising 模型的相进行分类
+  \item 探讨了限制 Boltzmann 机 (RBM) 等基于能量的模型与重整化群的联系；引入卷积层，试图从理论上建立起与 AdS/CFT 之间的对应
+\end{itemize}
+
+\section{技能}
+
+\subsection{编程}
+
+\begin{itemize}
+  \item 编程语言：Python, C/C++, JavaScript/TypeScript, Rust, Julia, Haskell, Lua
+  \item 科学计算：NumPy, SciPy, Mathematica, MATLAB
+  \item 前端开发：HTML/CSS, Vue.js, Vite, Nuxt, Tailwind CSS, Bootstrap
+  \item 其他：Git, Bash, Linux, \LaTeX{}
+\end{itemize}
+
+\subsection{语言}
+
+\begin{itemize}
+  \item 汉语、英语（熟练）、日语（入门）
+\end{itemize}
+
+\lastupdated
+
+\end{document}
